@@ -6,6 +6,7 @@ Pod::Spec.new do |s|
                    Supports efficiently determining if two objects belong to the same set,
                    and combining those sets together, as part of larger algorithms.
                    
+                   * #import "UnionFind.h"
                    * Place a 'UFDisjointSetNode *' field on objects you want to put in implicit mergeable sets.
                    * Initialize the field with '[UFDisjointSetNode new]'.
                    * Use '[obj1.nodeField unionWith:obj2.nodeField]' to merge sets.
