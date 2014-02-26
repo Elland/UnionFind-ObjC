@@ -1,7 +1,7 @@
-#import "UnionFindNode.h"
+#import "UFDisjointSetNode.h"
 
-@implementation UnionFindNode {
-@private UnionFindNode* _parent;
+@implementation UFDisjointSetNode {
+@private UFDisjointSetNode* _parent;
 @private uint32_t _rank;
 }
 
@@ -13,18 +13,18 @@
     return self;
 }
 
--(UnionFindNode *)currentRepresentative {
+-(UFDisjointSetNode *)currentRepresentative {
     if (_parent != self) {
         _parent = _parent.currentRepresentative;
     }
     return _parent;
 }
 
--(bool)unionWith:(UnionFindNode *)other {
+-(bool)unionWith:(UFDisjointSetNode *)other {
     NSCParameterAssert(other != nil);
     
-    UnionFindNode* rep1 = self.currentRepresentative;
-    UnionFindNode* rep2 = other.currentRepresentative;
+    UFDisjointSetNode* rep1 = self.currentRepresentative;
+    UFDisjointSetNode* rep2 = other.currentRepresentative;
     if (rep1 == rep2) return false;
 
     if (rep1->_rank < rep2->_rank) {
@@ -38,7 +38,7 @@
     return true;
 }
 
--(bool)isInSameSetAs:(UnionFindNode *)other {
+-(bool)isInSameSetAs:(UFDisjointSetNode *)other {
     NSCParameterAssert(other != nil);
     
     return self.currentRepresentative == other.currentRepresentative;

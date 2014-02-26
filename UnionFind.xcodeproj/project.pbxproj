@@ -11,9 +11,9 @@
 		A1A134BD18BD5E440067ECB0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A134BC18BD5E440067ECB0 /* XCTest.framework */; };
 		A1A134BE18BD5E440067ECB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A134AE18BD5E440067ECB0 /* Foundation.framework */; };
 		A1A134C318BD5E440067ECB0 /* libUnionFind.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A134AB18BD5E440067ECB0 /* libUnionFind.a */; };
-		A1A134DD18BD5F650067ECB0 /* UnionFindNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A134DC18BD5F650067ECB0 /* UnionFindNode.m */; };
-		A1A134DE18BD5F650067ECB0 /* UnionFindNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A134DC18BD5F650067ECB0 /* UnionFindNode.m */; };
-		A1A134E418BD667F0067ECB0 /* UnionFindNodeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A134E318BD667F0067ECB0 /* UnionFindNodeTest.m */; };
+		A1A134DD18BD5F650067ECB0 /* UFDisjointSetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A134DC18BD5F650067ECB0 /* UFDisjointSetNode.m */; };
+		A1A134DE18BD5F650067ECB0 /* UFDisjointSetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A134DC18BD5F650067ECB0 /* UFDisjointSetNode.m */; };
+		A1A134E418BD667F0067ECB0 /* UFDisjointSetNodeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A134E318BD667F0067ECB0 /* UFDisjointSetNodeTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +43,11 @@
 		A1A134AE18BD5E440067ECB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A1A134BB18BD5E440067ECB0 /* UnionFindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnionFindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A134BC18BD5E440067ECB0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		A1A134DB18BD5F650067ECB0 /* UnionFindNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionFindNode.h; sourceTree = "<group>"; };
-		A1A134DC18BD5F650067ECB0 /* UnionFindNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionFindNode.m; sourceTree = "<group>"; };
+		A1A134DB18BD5F650067ECB0 /* UFDisjointSetNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFDisjointSetNode.h; sourceTree = "<group>"; };
+		A1A134DC18BD5F650067ECB0 /* UFDisjointSetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFDisjointSetNode.m; sourceTree = "<group>"; };
 		A1A134DF18BD66520067ECB0 /* Testing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Testing.h; sourceTree = "<group>"; };
-		A1A134E318BD667F0067ECB0 /* UnionFindNodeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionFindNodeTest.m; sourceTree = "<group>"; };
+		A1A134E318BD667F0067ECB0 /* UFDisjointSetNodeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFDisjointSetNodeTest.m; sourceTree = "<group>"; };
+		A1A134E518BD76410067ECB0 /* UnionFind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnionFind.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +103,9 @@
 		A1A134D418BD5EDC0067ECB0 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				A1A134DB18BD5F650067ECB0 /* UnionFindNode.h */,
-				A1A134DC18BD5F650067ECB0 /* UnionFindNode.m */,
+				A1A134E518BD76410067ECB0 /* UnionFind.h */,
+				A1A134DB18BD5F650067ECB0 /* UFDisjointSetNode.h */,
+				A1A134DC18BD5F650067ECB0 /* UFDisjointSetNode.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -112,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A134DF18BD66520067ECB0 /* Testing.h */,
-				A1A134E318BD667F0067ECB0 /* UnionFindNodeTest.m */,
+				A1A134E318BD667F0067ECB0 /* UFDisjointSetNodeTest.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -197,7 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1A134DD18BD5F650067ECB0 /* UnionFindNode.m in Sources */,
+				A1A134DD18BD5F650067ECB0 /* UFDisjointSetNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,8 +207,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1A134E418BD667F0067ECB0 /* UnionFindNodeTest.m in Sources */,
-				A1A134DE18BD5F650067ECB0 /* UnionFindNode.m in Sources */,
+				A1A134E418BD667F0067ECB0 /* UFDisjointSetNodeTest.m in Sources */,
+				A1A134DE18BD5F650067ECB0 /* UFDisjointSetNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

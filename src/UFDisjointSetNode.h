@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 
 /*!
- * A UnionFindNode is a member, and potential representative, of an implicit set of nodes.
+ * A UFDisjointSetNode is a member, and potential representative, of an implicit set of nodes.
  * 
- * @discussion UnionFindNode sets are disjoint, meaning they never partially overlap.
+ * @discussion UFDisjointSetNode sets are disjoint, meaning they never partially overlap.
  * The implicit sets either have all elements in common, or no elements in common.
  *
  * New nodes are in a new implicit set all by themselves.
@@ -17,7 +17,7 @@
  * The amortized cost of performing N operations on up to N nodes is very nearly O(N).
  * The actual bound is O(N inverseAckermann(N)), where inverseAckermann(N) <= 5 for all practical purposes.
  */
-@interface UnionFindNode : NSObject
+@interface UFDisjointSetNode : NSObject
 
 /*!
  * Initializes the receiving node to be in a set by itself.
@@ -25,13 +25,13 @@
 -(instancetype)init;
 
 /*!
- * Returns a UnionFindNode representing the set the receiving node is in.
+ * Returns a UFDisjointSetNode representing the set the receiving node is in.
  *
  * @discussion All nodes in the same set will return the same representative.
  *
  * The representative can change when sets are combined via 'unionWith'.
  */
--(UnionFindNode*)currentRepresentative;
+-(UFDisjointSetNode*)currentRepresentative;
 
 /*!
  * Combines the set the receiving node is in with the set the given other node is in.
@@ -44,7 +44,7 @@
  * True when they were, so the operation had no effect.
  * False when the operation merged the sets.
  */
--(bool)unionWith:(UnionFindNode*)other;
+-(bool)unionWith:(UFDisjointSetNode*)other;
 
 /*!
  * Determines if the receiving node is in the same set as the given other node.
@@ -54,6 +54,6 @@
  * A node is in the same set as any node it has been unioned with,
  * as well as nodes those nodes have been unioned with (transitivity).
  */
--(bool)isInSameSetAs:(UnionFindNode*)other;
+-(bool)isInSameSetAs:(UFDisjointSetNode*)other;
 
 @end

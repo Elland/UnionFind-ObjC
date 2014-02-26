@@ -1,10 +1,10 @@
 #import "Testing.h"
-#import "UnionFindNode.h"
+#import "UFDisjointSetNode.h"
 
-@interface UnionFindNodeTest : XCTestCase
+@interface UFDisjointSetNodeTest : XCTestCase
 @end
 
-@implementation UnionFindNodeTest
+@implementation UFDisjointSetNodeTest
 
 -(void)compareAgainstReferenceWithOperations:(NSArray*)operations andCount:(int)count {
     NSMutableArray* sets = [NSMutableArray new];
@@ -13,7 +13,7 @@
         NSMutableSet* s = [NSMutableSet new];
         [s addObject:@(i)];
         [sets addObject:s];
-        [nodes addObject:[UnionFindNode new]];
+        [nodes addObject:[UFDisjointSetNode new]];
     }
     
     for (NSArray* op in operations) {
@@ -22,8 +22,8 @@
         NSUInteger i1 = ((NSNumber*)op[1]).unsignedIntegerValue;
         NSUInteger i2 = ((NSNumber*)op[2]).unsignedIntegerValue;
         
-        UnionFindNode* node1 = nodes[i1];
-        UnionFindNode* node2 = nodes[i2];
+        UFDisjointSetNode* node1 = nodes[i1];
+        UFDisjointSetNode* node2 = nodes[i2];
         NSMutableSet* set1 = sets[i1];
         NSMutableSet* set2 = sets[i2];
         
@@ -46,8 +46,8 @@
 }
 
 -(void)testTrivial {
-    UnionFindNode* r1 = [UnionFindNode new];
-    UnionFindNode* r2 = [UnionFindNode new];
+    UFDisjointSetNode* r1 = [UFDisjointSetNode new];
+    UFDisjointSetNode* r2 = [UFDisjointSetNode new];
     
     test([r1 isInSameSetAs:r1]);
     test([r2 isInSameSetAs:r2]);
@@ -59,9 +59,9 @@
     test([r1 isInSameSetAs:r2]);
 }
 -(void)testTrivial2 {
-    UnionFindNode* r1 = [UnionFindNode new];
-    UnionFindNode* r2 = [UnionFindNode new];
-    UnionFindNode* r3 = [UnionFindNode new];
+    UFDisjointSetNode* r1 = [UFDisjointSetNode new];
+    UFDisjointSetNode* r2 = [UFDisjointSetNode new];
+    UFDisjointSetNode* r3 = [UFDisjointSetNode new];
     test(![r1 isInSameSetAs:r2]);
     test(![r1 isInSameSetAs:r3]);
     test(![r2 isInSameSetAs:r3]);
@@ -79,10 +79,10 @@
 -(void)testChain {
     NSMutableArray* r = [NSMutableArray new];
     for (int repeat = 0; repeat < 100; repeat++) {
-        [r addObject:[UnionFindNode new]];
+        [r addObject:[UFDisjointSetNode new]];
         [r.lastObject unionWith:r.firstObject];
-        for (UnionFindNode* e1 in r) {
-            for (UnionFindNode* e2 in r) {
+        for (UFDisjointSetNode* e1 in r) {
+            for (UFDisjointSetNode* e2 in r) {
                 test([e1 isInSameSetAs:e2]);
             }
         }
