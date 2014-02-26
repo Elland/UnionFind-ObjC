@@ -6,8 +6,8 @@ Pod::Spec.new do |s|
                    Supports efficiently determining if two objects belong to the same set,
                    and combining the sets two objects are in.
                    
-                   * Give the object you want to belong to an (implicit) set a field of type UnionFindNode *.
-                   * Initialize the node field with 'yourNodeField = [UnionFindNode new]' before doing operations on it.
+                   * Give the object you want to belong to an (implicit) set a field of type UFDisjointSetNode *.
+                   * Initialize the node field with 'yourNodeField = [UFDisjointSetNode new]' before doing operations on it.
                    * Use '[obj1.yourNodeField unionWith:obj2.yourNodeField]' to merge two objects' sets into a single set.
                    * Use '[obj1.yourNodeField isInSameSetAs:obj2.yourNodeField]' to determine if two objects are in the same set.
                    DESC
