@@ -1,7 +1,7 @@
 UnionFind for Objective-C
 =========================
 
-This is a tiny library implementating a union find / disjoint set data structure, featuring:
+This is a tiny library implementing a union find / disjoint set data structure, featuring:
 
 - **Nodes**: The only type is `UFDisjointSetNode`. A `UFDisjointSetNode` is a member of some implicit set of nodes. At any given time, the set is represented by some single specific node among its members. Sets never partially overlap; they are either the same set or have no nodes in common.
 - **Union-ing**: Use `unionWith:` to merge the sets two `UFDisjointSetNode`s are members of into a single set.
