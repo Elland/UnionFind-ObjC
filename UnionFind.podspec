@@ -4,12 +4,12 @@ Pod::Spec.new do |s|
   s.summary      = "A union find / disjoint set data structure."
   s.description  = <<-DESC
                    Supports efficiently determining if two objects belong to the same set,
-                   and combining the sets two objects are in.
+                   and combining those sets together, as part of larger algorithms.
                    
-                   * Give the object you want to belong to an (implicit) set a field of type UFDisjointSetNode *.
-                   * Initialize the node field with 'yourNodeField = [UFDisjointSetNode new]' before doing operations on it.
-                   * Use '[obj1.yourNodeField unionWith:obj2.yourNodeField]' to merge two objects' sets into a single set.
-                   * Use '[obj1.yourNodeField isInSameSetAs:obj2.yourNodeField]' to determine if two objects are in the same set.
+                   * Place a 'UFDisjointSetNode *' field on objects you want to put in implicit mergeable sets.
+                   * Initialize the field with '[UFDisjointSetNode new]'.
+                   * Use '[obj1.nodeField unionWith:obj2.nodeField]' to merge sets.
+                   * Use '[obj1.nodeField isInSameSetAs:obj2.nodeField]' to determine if two objects are in the same set.
                    DESC
   s.homepage     = "https://github.com/Strilanc/UnionFind-ObjC"
   s.license      = { :type => 'Unlicense', :file => 'LICENSE' }
