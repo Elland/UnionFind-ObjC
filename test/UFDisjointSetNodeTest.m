@@ -34,8 +34,10 @@
             test(isSame == isSameRef);
             test(isSame2 == isSameRef);
         } else {
-            [node1 unionWith:node2];
-            if (set1 != set2) {
+            bool didUnion = [node1 unionWith:node2];
+            bool shouldUnion = set1 != set2;
+            test(didUnion == shouldUnion);
+            if (shouldUnion) {
                 for (NSNumber* e in set1) {
                     [set2 addObject:e];
                     sets[e.unsignedIntegerValue] = set2;
@@ -45,6 +47,39 @@
     }
 }
 
+-(void)testTrivialUnion {
+    UFDisjointSetNode* r1 = [UFDisjointSetNode new];
+    test(r1.currentRepresentative == r1.currentRepresentative);
+    test(![r1 unionWith:r1]);
+    
+    UFDisjointSetNode* r2 = [UFDisjointSetNode new];
+    test([r1 unionWith:r2]);
+    test(![r1 unionWith:r2]);
+    
+    UFDisjointSetNode* r3 = [UFDisjointSetNode new];
+    test([r1 unionWith:r3]);
+    test(![r2 unionWith:r3]);
+}
+-(void)testTrivialRepresentative {
+    UFDisjointSetNode* r1 = [UFDisjointSetNode new];
+    test(r1.currentRepresentative == r1.currentRepresentative);
+
+    UFDisjointSetNode* r2 = [UFDisjointSetNode new];
+    test(r2.currentRepresentative == r2.currentRepresentative);
+    test(r1.currentRepresentative != r2.currentRepresentative);
+
+    test([r1 unionWith:r2]);
+    test(r1.currentRepresentative == r1.currentRepresentative);
+    test(r2.currentRepresentative == r2.currentRepresentative);
+    test(r1.currentRepresentative == r2.currentRepresentative);
+
+    UFDisjointSetNode* r3 = [UFDisjointSetNode new];
+    test(r1.currentRepresentative != r3.currentRepresentative);
+    
+    [r1 unionWith:r3];
+    test(r1.currentRepresentative == r3.currentRepresentative);
+    test(r2.currentRepresentative == r3.currentRepresentative);
+}
 -(void)testTrivial {
     UFDisjointSetNode* r1 = [UFDisjointSetNode new];
     UFDisjointSetNode* r2 = [UFDisjointSetNode new];
@@ -53,7 +88,7 @@
     test([r2 isInSameSetAs:r2]);
     test(![r1 isInSameSetAs:r2]);
     
-    [r1 unionWith:r2];
+    test([r1 unionWith:r2]);
     test([r1 isInSameSetAs:r1]);
     test([r2 isInSameSetAs:r2]);
     test([r1 isInSameSetAs:r2]);
@@ -66,21 +101,22 @@
     test(![r1 isInSameSetAs:r3]);
     test(![r2 isInSameSetAs:r3]);
     
-    [r1 unionWith:r3];
+    test([r1 unionWith:r3]);
     test(![r1 isInSameSetAs:r2]);
     test([r1 isInSameSetAs:r3]);
     test(![r2 isInSameSetAs:r3]);
     
-    [r1 unionWith:r2];
+    test([r1 unionWith:r2]);
     test([r1 isInSameSetAs:r2]);
     test([r1 isInSameSetAs:r3]);
     test([r2 isInSameSetAs:r3]);
 }
 -(void)testChain {
     NSMutableArray* r = [NSMutableArray new];
+    [r addObject:[UFDisjointSetNode new]];
     for (int repeat = 0; repeat < 100; repeat++) {
         [r addObject:[UFDisjointSetNode new]];
-        [r.lastObject unionWith:r.firstObject];
+        test([r.lastObject unionWith:r.firstObject]);
         for (UFDisjointSetNode* e1 in r) {
             for (UFDisjointSetNode* e2 in r) {
                 test([e1 isInSameSetAs:e2]);

@@ -40,9 +40,9 @@
  *
  * Modifies the representatives of the sets.
  *
- * @return Whether or not the nodes were already in the same set.
- * True when they were, so the operation had no effect.
- * False when the operation merged the sets.
+ * @return Whether or not the nodes were in separate sets.
+ * True when they were in separate sets, so the operation merged the two sets.
+ * False when the operation did nothing because the nodes were already in the same set.
  */
 -(bool)unionWith:(UFDisjointSetNode*)other;
 
