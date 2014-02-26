@@ -3,9 +3,9 @@ UnionFind for Objective-C
 
 This is a tiny library implementating a union find / disjoint set data structure, featuring:
 
-- Nodes: The only type is `UFDisjointSetNode`. A `UFDisjointSetNode` is a member of some implicit set of nodes. At any given time, the set is represented by some single specific node among its members. Sets never partially overlap; they are either the same set or have no nodes in common.
-- Union-ing: Use `unionWith:` to merge the sets two `UFDisjointSetNode`s are members of into a single set.
-- Find-ing: Use `isInSameSetAs:` to determine if two `UFDisjointSetNode`s are in the same set. Use `currentRepresentative` to get the current node representing the set the receiving node is in. Nodes are in the same set when they have the same representative.
+- **Nodes**: The only type is `UFDisjointSetNode`. A `UFDisjointSetNode` is a member of some implicit set of nodes. At any given time, the set is represented by some single specific node among its members. Sets never partially overlap; they are either the same set or have no nodes in common.
+- **Union-ing**: Use `unionWith:` to merge the sets two `UFDisjointSetNode`s are members of into a single set.
+- **Find-ing**: Use `isInSameSetAs:` to determine if two `UFDisjointSetNode`s are in the same set. Use `currentRepresentative` to get the current node representing the set the receiving node is in. Nodes are in the same set when they have the same representative.
 
 Installation
 ============
