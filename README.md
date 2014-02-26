@@ -42,4 +42,4 @@ For example, suppose we have a `FancyGraphNode` to which edges can be added but 
 3. When adding an edge, call `[edge.Node1._ccNode unionWith:edge.Node2._ccNode]`.
 4. To determine if two nodes are in the same component, evaluate `[node1._ccNode isInSameSetAs:node2._ccNode]`.
 
-An example application is discussed in this [blog post about incremental cycle detection](http://twistedoakstudios.com/blog/Post8766_detecting-simple-cycles-forming-faster).
+An example application is discussed in [this blog post about incremental cycle detection](http://twistedoakstudios.com/blog/Post8766_detecting-simple-cycles-forming-faster).
