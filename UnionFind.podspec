@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
                    * Use '[obj1.yourNodeField isInSameSetAs:obj2.yourNodeField]' to determine if two objects are in the same set.
                    DESC
   s.homepage     = "https://github.com/Strilanc/UnionFind-ObjC"
-  s.license      = { :type => 'Unlicense', :file => 'License.txt' }
+  s.license      = { :type => 'Unlicense', :file => 'LICENSE' }
   s.author       = { "Craig Gidney" => "craig.gidney@gmail.com" }
   s.source       = { :git => "https://github.com/Strilanc/UnionFind-ObjC.git", :tag => "v1.0.0" }
   s.source_files  = 'src', 'src/**/*.{h,m}'
