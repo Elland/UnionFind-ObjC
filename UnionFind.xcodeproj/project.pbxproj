@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F23467A1DE722B4003C6FCA /* UnionFindiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F2346781DE722B4003C6FCA /* UnionFindiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F23467E1DE722D9003C6FCA /* UFDisjointSetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A134DC18BD5F650067ECB0 /* UFDisjointSetNode.m */; };
+		9F23467F1DE722DE003C6FCA /* UnionFind.h in Headers */ = {isa = PBXBuildFile; fileRef = A1A134E518BD76410067ECB0 /* UnionFind.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F2346801DE722E0003C6FCA /* UFDisjointSetNode.h in Headers */ = {isa = PBXBuildFile; fileRef = A1A134DB18BD5F650067ECB0 /* UFDisjointSetNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1A134AF18BD5E440067ECB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A134AE18BD5E440067ECB0 /* Foundation.framework */; };
 		A1A134BD18BD5E440067ECB0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A134BC18BD5E440067ECB0 /* XCTest.framework */; };
 		A1A134BE18BD5E440067ECB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A134AE18BD5E440067ECB0 /* Foundation.framework */; };
@@ -39,6 +43,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F2346761DE722B4003C6FCA /* UnionFindiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UnionFindiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F2346781DE722B4003C6FCA /* UnionFindiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnionFindiOS.h; sourceTree = "<group>"; };
+		9F2346791DE722B4003C6FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1A134AB18BD5E440067ECB0 /* libUnionFind.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUnionFind.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A134AE18BD5E440067ECB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A1A134BB18BD5E440067ECB0 /* UnionFindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnionFindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +58,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F2346721DE722B4003C6FCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1A134A818BD5E440067ECB0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,9 +86,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F2346771DE722B4003C6FCA /* UnionFindiOS */ = {
+			isa = PBXGroup;
+			children = (
+				9F2346781DE722B4003C6FCA /* UnionFindiOS.h */,
+				9F2346791DE722B4003C6FCA /* Info.plist */,
+			);
+			path = UnionFindiOS;
+			sourceTree = "<group>";
+		};
 		A1A134A218BD5E440067ECB0 = {
 			isa = PBXGroup;
 			children = (
+				9F2346771DE722B4003C6FCA /* UnionFindiOS */,
 				A1A134AD18BD5E440067ECB0 /* Frameworks */,
 				A1A134AC18BD5E440067ECB0 /* Products */,
 				A1A134D418BD5EDC0067ECB0 /* src */,
@@ -87,6 +111,7 @@
 			children = (
 				A1A134AB18BD5E440067ECB0 /* libUnionFind.a */,
 				A1A134BB18BD5E440067ECB0 /* UnionFindTests.xctest */,
+				9F2346761DE722B4003C6FCA /* UnionFindiOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,7 +146,38 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		9F2346731DE722B4003C6FCA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F23467A1DE722B4003C6FCA /* UnionFindiOS.h in Headers */,
+				9F23467F1DE722DE003C6FCA /* UnionFind.h in Headers */,
+				9F2346801DE722E0003C6FCA /* UFDisjointSetNode.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		9F2346751DE722B4003C6FCA /* UnionFindiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F23467D1DE722B4003C6FCA /* Build configuration list for PBXNativeTarget "UnionFindiOS" */;
+			buildPhases = (
+				9F2346711DE722B4003C6FCA /* Sources */,
+				9F2346721DE722B4003C6FCA /* Frameworks */,
+				9F2346731DE722B4003C6FCA /* Headers */,
+				9F2346741DE722B4003C6FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnionFindiOS;
+			productName = UnionFindiOS;
+			productReference = 9F2346761DE722B4003C6FCA /* UnionFindiOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		A1A134AA18BD5E440067ECB0 /* UnionFind */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1A134CE18BD5E440067ECB0 /* Build configuration list for PBXNativeTarget "UnionFind" */;
@@ -165,6 +221,13 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Strilanc;
+				TargetAttributes = {
+					9F2346751DE722B4003C6FCA = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 29X3GG489T;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = A1A134A618BD5E440067ECB0 /* Build configuration list for PBXProject "UnionFind" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -180,11 +243,19 @@
 			targets = (
 				A1A134AA18BD5E440067ECB0 /* UnionFind */,
 				A1A134BA18BD5E440067ECB0 /* UnionFindTests */,
+				9F2346751DE722B4003C6FCA /* UnionFindiOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9F2346741DE722B4003C6FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1A134B918BD5E440067ECB0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,6 +266,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F2346711DE722B4003C6FCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F23467E1DE722D9003C6FCA /* UFDisjointSetNode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1A134A718BD5E440067ECB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +302,81 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9F23467B1DE722B4003C6FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 29X3GG489T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = UnionFindiOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = no.bakkenbaeck.UnionFindiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9F23467C1DE722B4003C6FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 29X3GG489T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = UnionFindiOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = no.bakkenbaeck.UnionFindiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		A1A134CC18BD5E440067ECB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -418,6 +572,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9F23467D1DE722B4003C6FCA /* Build configuration list for PBXNativeTarget "UnionFindiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F23467B1DE722B4003C6FCA /* Debug */,
+				9F23467C1DE722B4003C6FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A1A134A618BD5E440067ECB0 /* Build configuration list for PBXProject "UnionFind" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -434,6 +596,7 @@
 				A1A134D018BD5E440067ECB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A1A134D118BD5E440067ECB0 /* Build configuration list for PBXNativeTarget "UnionFindTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +605,7 @@
 				A1A134D318BD5E440067ECB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
