@@ -11,3 +11,5 @@ build/*
 # Exclude user-specific XCode 3 and 4 files
 *.xcworkspace
 xcuserdata
+
+Checkouts
